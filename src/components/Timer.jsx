@@ -21,6 +21,6 @@ export default function Timer({ timeout, onTimeout }) {
 
 
   return <>
-      <div className="radial-progress justify-self-end" style={{"--value":radialValue}} role="progressbar">{Math.trunc(remainingTime/1000)}</div>
+      <div className="radial-progress" style={{"--value":radialValue}} role="progressbar">{Math.trunc(remainingTime/1000)}</div>
     </>
 }

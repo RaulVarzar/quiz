@@ -37,13 +37,13 @@ export default function Results({answers, shuffledAnswers}) {
                         </div>
                         
                         {mark >= 50 ?
-                            <div className="bg-neutral stat">
+                            <div className="bg-secondary stat">
                                 <div className="stat-title">YOUR MARK</div>
                                 <div className="stat-value">{mark}%</div>
                                 <div className="text-lg">PASS</div> 
                             </div> 
                             :
-                            <div className="bg-warning stat">
+                            <div className="bg-error stat">
                                 <div className="stat-title">YOUR MARK</div>
                                 <div className="stat-value">{Math.round(mark * 100) / 100}%</div>
                                 <div className="text-lg">FAIL</div> 
