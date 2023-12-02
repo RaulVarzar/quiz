@@ -14,7 +14,7 @@ export default function IndividualResult ({answers, index, shuffledAnswers}) {
                             {shuffledAnswers[index].map((defaultAnswer) => {
                                 let conditionalClasses = ''
                                 if (QUESTIONS[index].answers[0] === defaultAnswer && defaultAnswer === answers[index]) {
-                                    conditionalClasses = " bg-emerald-300 font-semibold"
+                                    conditionalClasses = " bg-emerald-700 font-semibold"
                                 } else if (QUESTIONS[index].answers[0] != defaultAnswer && defaultAnswer === answers[index]) {
                                     conditionalClasses = " bg-rose-400 font-semibold"
                                 } else{
