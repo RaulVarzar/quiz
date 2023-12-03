@@ -45,12 +45,12 @@ export default function Quiz() {
     }
 
     return(
-       
+       <>
                 <motion.div 
                     layout 
                     initial={{scaleY:0}} 
                     animate={{scaleY:1, transition:{delay:0, duration:0.25}}} 
-                    className="w-11/12 lg:max-w-6xl mx-auto overflow-hidden text-center rounded-lg shadow-[0_3px_10px_rgb(0,0,0,0.2)] lg:min-h-fit lg:w-10/12 bg-base-200"
+                    className={"md:my-8 mb-12 md:mb-8 md:pb-0 lg:max-w-6xl mx-auto overflow-hidden text-center md:rounded-lg shadow-[0_3px_10px_rgb(0,0,0,0.2)] lg:min-h-fit lg:w-10/12 bg-base-200" + (gameOver ? " w-12/12" : " w-11/12")}
                 >
                     <LayoutGroup>
                         {gameOver ? 
@@ -60,7 +60,7 @@ export default function Quiz() {
                         :
                         
                         <FadeOut key={gameOver} duration={0.5} delay={0.2}>
-                        <motion.div className='px-4 py-0 lg:py-8 md:px-10 '>
+                        <motion.div className='px-4 py-6 lg:py-8 md:px-10'>
                                 <motion.h2 
                                     key={QUESTIONS[currentQuestionIndex].text}
                                     initial={{ opacity: 0 , scaleX:0.85, y:-5}}
@@ -87,9 +87,9 @@ export default function Quiz() {
                                         className='content-center flex-auto w-full lg:mx-10 menu text-content grow-none'
                                     >
                                         {shuffledAnswers[currentQuestionIndex].map((answer) => {
-                                            let classes = ['w-full focus:bg-red-300 text-center my-1.5 text-sm md:tracking-wider transition-all duration-150 hover:scale-101 ease-in-out lg:text-[15px] md:text-md rounded-lg bg-base-100 drop-shadow-md hover:drop-shadow-none']
+                                            let classes = ['w-full text-center my-1.5 text-sm md:tracking-wider transition-all duration-150 hover:scale-101 ease-in-out lg:text-[15px] md:text-md rounded-lg bg-base-100 drop-shadow-md hover:drop-shadow-none']
                                             if (answer === selectedAnswer) {
-                                                classes.push(' ring-1 ring-offset-1 ring-offset-transparent ring-base-content bg-indigo-600 my-3')
+                                                classes.push(' ring-1 ring-offset-1 ring-offset-transparent bg-opacity-50 ring-base-content bg-indigo-600')
                                             }
                                             return(
                                                     <li 
@@ -121,10 +121,13 @@ export default function Quiz() {
                                 initial = {{scaleX :0}}
                                 transition = {{ duration: 0.5 }}
                             />
+                            
                             </FadeOut>
                         }
                         </LayoutGroup>
+                        
                 </motion.div>
-
+               
+                </>
     )
 }

@@ -1,6 +1,6 @@
 import IndividualResult from "./IndividualResult.jsx"
 import QUESTIONS from "./util/questions.js"
-import { FadeIn, FromTop } from "./Animations.jsx"
+import { FromTop } from "./Animations.jsx"
 import { motion } from 'framer-motion'
 
 const iconVariants = {
@@ -27,27 +27,27 @@ export default function Results({answers, shuffledAnswers, restartQuiz}) {
     return(
                 <div className="">     
                 <FromTop delay={0.2} duration={0.2}>
-                    <div className="w-full mb-4 text-xs align-middle rounded-none shadow sm:text-md md:text-lg stats stats-vertical sm:stats-horizontal">
-                        <div className="stat bg-neutral">
-                            <div className="stat-title">Skipped questions</div>
+                    <div className="w-full mb-4 text-xs align-middle rounded-none shadow sm:text-md md:text-lg stats sm:stats-horizontal">
+                        <div className="px-1 py-2 md:p-6 stat bg-neutral">
+                            <div className="stat-title">SKIPPED</div>
                             <div className="stat-value">{skipped}</div>
                             <div className="text-lg stat-desc">{skippedPercentage}%</div>
                         </div>
                         
-                        <div className="bg-neutral stat">
-                            <div className="stat-title">Answered questions</div>
-                            <div className="stat-value">{answers.length - skipped}</div>
+                        <div className="px-1 py-2 bg-neutral md:p-6 stat">
+                            <div className="stat-title">ANSWERED</div>
+                            <div className="text-md stat-value">{answers.length - skipped}</div>
                             <div className="text-lg stat-desc">{answeredPercentage}%</div>
                         </div>
                         
                         {mark >= 50 ?
-                            <div className="bg-emerald-400 stat">
+                            <div className="px-1 py-2 md:p-6 bg-emerald-400 stat">
                                 <div className="stat-title">YOUR MARK</div>
-                                <div className="stat-value">{mark}%</div>
+                                <div className=" stat-value">{mark}%</div>
                                 <div className="text-lg">PASS</div> 
                             </div> 
                             :
-                            <div className=" bg-error stat">
+                            <div className="px-1 py-2 md:p-6 bg-error stat">
                                 <div className="stat-title">YOUR MARK</div>
                                 <div className="stat-value">{Math.round(mark * 100) / 100}%</div>
                                 <div className="text-lg">FAIL</div> 
@@ -56,7 +56,11 @@ export default function Results({answers, shuffledAnswers, restartQuiz}) {
                     </div>
                 </FromTop>
                 
-                   <motion.div initial={{scaleY:0}} animate={{scaleY:1, transition:{delay:0.4, duration:0.2}}}>
+                   <motion.div 
+                        initial={{scaleY:0}} 
+                        animate={{scaleY:1, transition:{delay:0.4, duration:0.2}}}
+                        className="px-4 md:px-0"
+                   >
                         <h2 className="my-2 text-3xl font-semibold uppercase">Your answers</h2>
                         {answers.map((answer, index) => (
                             <IndividualResult key={index} answer={answer} answers={answers[index]} shuffledAnswers={shuffledAnswers[index]} index={index}/>
@@ -66,7 +70,7 @@ export default function Results({answers, shuffledAnswers, restartQuiz}) {
                 <motion.button 
                     initial="default" 
                     whileHover="hover"
-                    className="mt-4 rounded-none bg-base-100 btn btn-block "
+                    className="fixed bottom-0 left-0 z-10 mt-4 rounded-none md:relative btn-block bg-base-100 btn hover:bg-indigo-800"
                     onClick={restartQuiz}
                 >
                     TRY AGAIN 

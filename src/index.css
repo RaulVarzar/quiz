@@ -18,9 +18,16 @@ code {
 
 .myprogress {
   position: relative;
-  background: success;
+  width:100%;
   @apply bg-indigo-500;
-  width: 100%;
   height: 5px;
   transform-origin: 0 0;
 }
+
+/* @media only screen and (max-width: 600px) {
+  .myprogress{
+    position:fixed;
+    bottom:0;
+    left:0;
+  }
+} */

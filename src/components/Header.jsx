@@ -7,7 +7,7 @@ export default function Header({onStart}){
             <div className="flex flex-col items-center mx-auto w-fit">
                 <JumpIn duration={0.7} delay={0.5} className="content-center flex-none my-auto text-center align-middle" >
                         <h1 className="text-4xl font-bold text-center align-middle lg:text-6xl"> {'<'}REACT_QUIZ{' />'} </h1> 
-                        <p className="my-3 italic text-md lg:text-lg">How much do you know about React? Test your knowledge with this quiz!</p>   
+                        <p className="my-3 italic text-center text-md lg:text-lg">How much do you know about React? Test your knowledge with this quiz!</p>   
                 </JumpIn>
                 
                 <JumpIn duration={0.4} delay={0.8}>

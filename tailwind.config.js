@@ -11,7 +11,10 @@ module.exports = {
       },
       height:{
         'svh':'100svh'
-      }
+      },
+      screens: { // remove hover on mobile
+        'betterhover': {'raw': '(hover: hover)'},
+    }
     }
   },
   plugins: [

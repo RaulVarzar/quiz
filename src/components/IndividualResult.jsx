@@ -13,12 +13,12 @@ export default function IndividualResult ({answer, index, shuffledAnswers}) {
                     <div className="p-0 text-sm font-medium bg-neutral md:text-xl collapse-title">
                         <div className="flex items-center justify-between h-full">
                             <p className='px-6 py-3.5 text-2xl bg-indigo-800 bg-opacity-20'>{index + 1}</p>
-                            <span>{QUESTIONS[index].text}</span>
-                            { !answer ? <i className="px-6 text-slate-600 fa-regular fa-circle fa-lg"></i> 
+                            <span className='px-1 text-xs md:text-lg'>{QUESTIONS[index].text}</span>
+                            { !answer ? <i className="pl-2 pr-6 text-slate-600 fa-regular fa-circle fa-lg"></i> 
                                 : 
-                            answerIsCorrect(answer) ? <i className="px-6 text-teal-500 fa-regular fa-circle-check fa-lg"></i> 
+                            answerIsCorrect(answer) ? <i className="pl-2 pr-6 text-teal-500 fa-regular fa-circle-check fa-lg"></i> 
                                 : 
-                             answerIsIncorrect(answer) && <i className="px-6 text-rose-300 fa-solid fa-circle-xmark fa-lg"></i> 
+                             answerIsIncorrect(answer) && <i className="pl-2 pr-6 text-rose-300 fa-solid fa-circle-xmark fa-lg"></i> 
                             }
                         </div>
                     </div>
@@ -35,7 +35,7 @@ export default function IndividualResult ({answer, index, shuffledAnswers}) {
                                     conditionalClasses = " bg-base-300 text-stone-400"
                                 }
                                 return(
-                                    <li key={selectedAnswer} className={"px-4 text-sm lg:text-md py-2 mx-auto my-2 rounded-xl w-fit" + conditionalClasses}>
+                                    <li key={selectedAnswer} className={"px-4 text-xs md:text-md py-2 mx-auto my-2 rounded-xl w-fit" + conditionalClasses}>
                                         {selectedAnswer}
                                     </li>
                                 )
