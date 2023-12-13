@@ -25,7 +25,7 @@ export default function Results({answers, shuffledAnswers, restartQuiz}) {
     const mark = ((correctAnswers/answers.length) * 100).toFixed(2)
        
     return(
-                <div className="">     
+                <div className="w-auto lg:w-[960px] xl:w-[1200px]">     
                 <FromTop delay={0.2} duration={0.2}>
                     <div className="w-full mb-4 text-xs align-middle rounded-none shadow sm:text-md md:text-lg stats sm:stats-horizontal">
                         <div className="px-1 py-2 md:p-6 stat bg-neutral">

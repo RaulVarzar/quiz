@@ -39,6 +39,7 @@ export default function Timer({ timeout, onTimeout, currentIndex }) {
         initial={{scale:0, opacity:0}}
         variants= {variants}
         animate= {newSecond <= 5 ? "open" : "closed"}
+        exit={{scale:0, opacity:0, transition:{delay:1, duration:1}}}
         transition={{duration:0.3, delay:0.3}}
         className={"radial-progress " + (newSecond <= 5 && " text-red-300")}
         style={{"--value":radialValue}} 

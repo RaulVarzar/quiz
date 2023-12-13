@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 
 export  function JumpIn({ children, duration, delay }){
     return(
@@ -19,7 +19,6 @@ export  function FadeIn({ children, duration, delay }){
             initial={{ opacity:0 }}
             animate={{  opacity:1 }}
             transition={{ duration: duration, delay:delay }}
-            
         >
             {children}
         </motion.div>
